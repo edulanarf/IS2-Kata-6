@@ -4,13 +4,15 @@ import io.javalin.Javalin;
 import ulpgc.es.control.CommandFactory;
 import ulpgc.es.control.commands.WorkingDateCommand;
 import ulpgc.es.control.commands.WorkingDaysCommand;
+import ulpgc.es.view.adapters.WorkingDateAdapter;
+import ulpgc.es.view.adapters.WorkingDaysAdapter;
 
-public class workingDaysService {
+public class WorkingDaysService {
     private final int port;
     private final CommandFactory factory;
     private Javalin app;
 
-    public workingDaysService(int port, CommandFactory factory) {
+    public WorkingDaysService(int port, CommandFactory factory) {
         this.port = port;
         this.factory = factory;
         factory.register("working-service", workingDaysBuilder());
@@ -30,6 +32,7 @@ public class workingDaysService {
     }
 
     private static CommandFactory.Builder workingDaysBuilder(){
-        return (req,res)-> new WorkingDaysCommand(WorkingDaysAdapter.inputOf(req), WorkingDaysAdapter.outputOf(res));
+        WorkingDaysAdapter WorkingDaysAdapter;
+        return (req, res)-> new WorkingDaysCommand(WorkingDaysAdapter.inputOf(req), WorkingDaysAdapter.outputOf(res));
     }
 }
