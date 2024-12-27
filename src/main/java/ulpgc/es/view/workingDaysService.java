@@ -2,6 +2,8 @@ package ulpgc.es.view;
 
 import io.javalin.Javalin;
 import ulpgc.es.control.CommandFactory;
+import ulpgc.es.control.commands.WorkingDateCommand;
+import ulpgc.es.control.commands.WorkingDaysCommand;
 
 public class workingDaysService {
     private final int port;
