@@ -1,6 +1,7 @@
 package ulpgc.es.control.commands;
 
 import ulpgc.es.control.Command;
+import ulpgc.es.model.WorkingDaysCalendar;
 
 import java.time.LocalDate;
 import java.util.Iterator;
